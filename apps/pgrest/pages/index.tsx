@@ -1,13 +1,13 @@
 import { postgrestClient } from '@postgrest/database';
 import styles from './index.module.css';
 
-async function getProject() {
-  const { data: project } = await postgrestClient
-    .from('projetos')
-    .select('*')
-    .eq('id_projetos', '1443')
+async function getMovie() {
+  const { data: movie } = await postgrestClient
+    .from('movies')
+    .select('title')
+    .eq('id', '1')
     .single();
-  return project;
+  return movie;
 }
 
 export function Index() {
