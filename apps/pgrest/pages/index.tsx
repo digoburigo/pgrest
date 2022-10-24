@@ -1,4 +1,14 @@
+import { postgrestClient } from '@postgrest/database';
 import styles from './index.module.css';
+
+async function getProject() {
+  const { data: project } = await postgrestClient
+    .from('projetos')
+    .select('*')
+    .eq('id_projetos', '1443')
+    .single();
+  return project;
+}
 
 export function Index() {
   /*
