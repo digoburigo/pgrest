@@ -4,7 +4,7 @@ import styles from './index.module.css';
 async function getMovie() {
   const { data: movie } = await postgrestClient
     .from('movies')
-    .select('title')
+    .select('*')
     .eq('id', '1')
     .single();
   return movie;
